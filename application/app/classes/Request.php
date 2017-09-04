@@ -5,24 +5,25 @@ namespace App\Classes;
 class Request
 {
     protected $method;
+    protected $api;
     protected $requestData;
     protected $responseData;
     
-    public function __construct($method)
+    public function __construct($method, $api)
     {
         $this->method = $method;
+        $this->method = $api;
         $this->requestData = $this->getRequestData();
-        echo "method is $this->method and api is ".print_r($this->requestData, true);
     }
     
-    public function collectData()
+    public function processData()
     {
         $this->responseData = null;
     }
     
     public function sendResponse()
     {
-//         Response::success($this->responseData);
+        Response::success($this->responseData);
     }
     
     protected function getRequestData()
