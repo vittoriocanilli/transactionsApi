@@ -2,17 +2,27 @@
 
 namespace App\Classes;
 
+use App\Models\{ TransactionModel };
+
 class StatisticsRequest extends Request
 {
     public function processData()
     {
+        $model = new TransactionModel();
+        $allTransactions = $model->getAll();
+        
+        $sum = array_sum($allTransactions);
+        $max = max($allTransactions);
+        $min = min($allTransactions);
+        $count = count($allTransactions);
+        
         $response = array(
-            "sum" => 1000,
-            "avg" => 100,
-            "max" => 200,
-            "min" => 50,
-            "count" => 10
-        ); //TODO
+            "sum" => $sum,
+            "avg" => $sum/$count,
+            "max" => $max,
+            "min" => $min,
+            "count" => $count
+        );
         $this->responseData = $response;
     }
     
