@@ -25,4 +25,10 @@ class Response
         http_response_code(404);
         echo json_encode(array('message' => 'API not found'));
     }
+    
+    public static function notAllowed()
+    {
+        http_response_code(405);
+        echo json_encode(array('message' => 'Method not allowed'));
+    }
 }

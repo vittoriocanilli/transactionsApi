@@ -5,14 +5,12 @@ namespace App\Classes;
 class Request
 {
     protected $method;
-    protected $api;
     protected $requestData;
     protected $responseData;
     
-    public function __construct($method, $api)
+    public function __construct($method)
     {
         $this->method = $method;
-        $this->api = $api;
         $this->requestData = $this->getRequestData();
     }
     

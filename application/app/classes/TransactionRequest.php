@@ -13,20 +13,13 @@ class TransactionRequest extends Request
         
         $now = time() * 1000;
         $storingTransaction = ($now - $timestamp <= 60000);
-        $storingTransaction = true; // TODO
-        
-        $model = new TransactionModel();
-        $storedAmount = $model->get($timestamp);
-        if($storedAmount) {
-            die("transaction already stored with amount = ".$storedAmount);
-        }
         
         if($storingTransaction) {
-//             $model = new TransactionModel();
+            $model = new TransactionModel();
             $model->set($timestamp, $amount);
         }
         
-        $this->responseData = $storingTransaction; // TODO
+        $this->responseData = $storingTransaction;
     }
     
     public function sendResponse()
