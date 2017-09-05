@@ -12,7 +12,7 @@ class Request
     public function __construct($method, $api)
     {
         $this->method = $method;
-        $this->method = $api;
+        $this->api = $api;
         $this->requestData = $this->getRequestData();
     }
     
