@@ -18,7 +18,7 @@ class StatisticsRequest extends Request
         
         $response = array(
             "sum" => $sum,
-            "avg" => $sum/$count,
+            "avg" => round($sum/$count, 2),
             "max" => $max,
             "min" => $min,
             "count" => $count
