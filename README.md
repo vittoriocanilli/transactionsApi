@@ -37,4 +37,5 @@ In case you need to execute the PHPUnit tests you will need to go through the fo
     * docker exec -it PHP_DOCKER_ID_OR_NAME sh
 * execute the various tests with PHPUnit from the application's directory
     * cd /var/www/html && vendor/bin/phpunit
+
 Please note that you have to ssh to your PHP's Docker image and not to the Nginx's or Memcached's ones.
