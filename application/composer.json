@@ -1,7 +1,7 @@
 {
     "require": {
         "phpunit/phpunit": "~12.5",
-        "guzzlehttp/guzzle": "~6.0"
+        "guzzlehttp/guzzle": "~7.15"
     	},
     "autoload": {
         "psr-4": {
